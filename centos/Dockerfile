@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash - && \
     yum install -y epel-release centos-release-scl && \
     yum install -y @development devtoolset-8 openssh-server vim dstat net-tools bind-utils iperf sysbench telnet rsync mtr \
