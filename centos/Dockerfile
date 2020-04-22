@@ -11,5 +11,5 @@ RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash - && \
     rm /tmp/YourKit-JavaProfiler-2019.8-docker.zip && \
     pip3.4 install --upgrade pip awscli && \
     npm i -g pm2 && \
-    curl https://d3w1s6v3q73onm.cloudfront.net/static/c9-install.sh | sh && \
+    echo "complete -C aws_completer aws" >> ~/.bashrc && \
     yum clean all
