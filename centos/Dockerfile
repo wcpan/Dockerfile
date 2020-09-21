@@ -15,9 +15,9 @@ RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash - && \
     echo "build openssh-hpn" && \
     wget https://github.com/rapier1/openssh-portable/archive/master.zip && \
     unzip master.zip && \
-    cd openssh-portable && \
+    cd openssh-portable-master && \
     autoreconf && \
     ./configure --with-kerberos5 --with-pam  --sysconfdir=/etc/ssh --bindir=/usr/bin --sbindir=/usr/sbin && \
     make; make install && \
-    cd ..; rm -rf master.zip openssh-portable && \
+    cd ..; rm -rf master.zip openssh-portable-master && \
     yum clean all
