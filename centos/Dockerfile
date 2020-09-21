@@ -13,5 +13,11 @@ RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash - && \
     npm i -g pm2 && \
     echo "complete -C aws_completer aws" >> ~/.bashrc && \
     echo "build openssh-hpn" && \
-    wget https://github.com/rapier1/openssh-portable/archive/master.zip;unzip master.zip;cd openssh-portable;autoreconf;./configure;make; make install; cd ..; rm -rf master.zip openssh-portable && \
+    wget https://github.com/rapier1/openssh-portable/archive/master.zip && \
+    unzip master.zip && \
+    cd openssh-portable && \
+    autoreconf && \
+    ./configure --with-kerberos5 --with-pam  --sysconfdir=/etc/ssh --bindir=/usr/bin --sbindir=/usr/sbin && \
+    make; make install && \
+    cd ..; rm -rf master.zip openssh-portable && \
     yum clean all
